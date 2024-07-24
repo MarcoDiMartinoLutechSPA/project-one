@@ -1,0 +1,75 @@
+<mvc:View controllerName="sap.btp.projectone.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:l="sap.ui.layout"
+    xmlns:form="sap.ui.layout.form">
+
+    <f:DynamicPage id="dynamicPage" title="{i18n>title}">
+        <f:header>
+            <f:DynamicPageHeader>
+                <f:content>
+                    <VBox>
+                        <form:SimpleForm>
+                            <form:content>
+                                <Label text="OrderID"/>
+                                <Text text="{selectedOrderModel>/orderID}" />
+                                <Label text="EmployeeID"/>
+                                <Text text="{selectedOrderModel>/employeeID}"/>
+                                <Label text="CustomerID"/>
+                                <Text text="{selectedOrderModel>/customerID}" />
+                                <Label text="OrderDate"/>
+                                <Text text="{path: 'selectedOrderModel>/orderDate', formatter: '.formatter.formatDateString'}" />
+                            </form:content>
+                        </form:SimpleForm>
+                    </VBox>
+                    
+                    <Table id="OrderDetailsTable" items="{path: 'orderDetailsTableModel>/'}">
+                        <headerToolbar>
+                            <OverflowToolbar>
+                                <!--
+                                <Label text="OrderID: "/>
+                                <Text text="{selectedOrderModel>/orderID}"/>
+                                <Label text="CustomerID: "/>
+                                <Text text="{selectedOrderModel>/customerID}"/>
+                                 -->
+                                <ToolbarSpacer/>
+                                <Button text="torna indietro" press="onNavigateToPage1"></Button>
+                            </OverflowToolbar>
+                        </headerToolbar>
+
+                        <columns>
+                            <Column>
+                                <Text text="OrderID"/>
+                            </Column>
+                            <Column>
+                                <Text text="ProductID"/>
+                            </Column>
+                            <Column>
+                                <Text text="UnitPrice"/>
+                            </Column>
+                            <Column>
+                                <Text text="Quantity"/>
+                            </Column>
+                            <Column>
+                                <Text text="Discount"/>
+                            </Column>
+                        </columns>
+                        
+                        <items>
+                            <ColumnListItem>
+                                <cells>
+                                    <ObjectIdentifier title="{orderDetailsTableModel>OrderID}"/>
+                                    <Text text="{orderDetailsTableModel>ProductID}"/>
+                                    <Text text="{orderDetailsTableModel>UnitPrice}"/>
+                                    <Text text="{orderDetailsTableModel>Quantity}"/>
+                                    <Text text="{orderDetailsTableModel>Discount}"/>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </f:content>
+            </f:DynamicPageHeader>
+        </f:header>
+    </f:DynamicPage>
+</mvc:View>

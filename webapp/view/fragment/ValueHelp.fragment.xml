@@ -1,0 +1,27 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"> 
+    <Dialog>
+        <Table id="customerIDTable" growing="true" growingThreshold="100"  mode="SingleSelectLeft" items="{path: 'customerIDTableModel>/'}">
+            <columns>
+                <Column>
+                    <Text text="CustomerID"/>
+                </Column>
+            </columns>
+            
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{customerIDTableModel>CustomerID}"/>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+
+        <beginButton>
+            <Button text="OK" press="onOKPressed"></Button>
+        </beginButton>
+
+        <endButton>
+            <Button text="Chiudi" press="onCloseFragment"></Button>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

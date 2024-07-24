@@ -1,0 +1,20 @@
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:fb="sap.ui.comp.filterbar">
+
+    <fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search="onSearch" filterChange="onFilterChange">
+        <fb:filterGroupItems>
+            <fb:FilterGroupItem name="CustomerID" label="Customer ID obbligatorio" mandatory="true" groupName="Group1" visibleInFilterBar="true">
+                <fb:control>
+                    <Input valueHelpRequest="onValueHelp" showValueHelp="true" id="valueHelp" placeholder="Customer ID"/>
+                </fb:control>
+            </fb:FilterGroupItem>
+            <fb:FilterGroupItem name="OrderDate" groupName="Group2" visibleInFilterBar="true">
+                <fb:control>
+                    <DatePicker id="DatePicker" change=".changeDateHandler"/>
+                </fb:control>
+            </fb:FilterGroupItem>
+        </fb:filterGroupItems>
+    </fb:FilterBar>
+</mvc:View>

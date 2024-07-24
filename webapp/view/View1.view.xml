@@ -1,0 +1,58 @@
+<mvc:View controllerName="sap.btp.projectone.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core">
+
+    <f:DynamicPage id="dynamicPage" title="{i18n>title}" showFooter="true">
+        <f:header>
+            <f:DynamicPageHeader>
+                <f:content>
+                    <core:Fragment fragmentName="sap.btp.projectone.view.fragment.FilterBar" type="XML"/>
+                </f:content>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <Table id="ordersTable" mode="SingleSelectLeft" items="{path: 'ordersTableModel>/'}" selectionChange="onTableRowSelect">
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <ToolbarSpacer/>
+                        <Button text="Dettagli" press="onNavigateToPage2"/>
+                        <Button text="Download Excel" press="onExport"/>
+                    </OverflowToolbar>
+                </headerToolbar>
+    
+                <columns>
+                    <Column>
+                        <Text text="OrderID"/>
+                    </Column>
+                    <Column>
+                        <Text text="EmployeeID"/>
+                    </Column>
+                    <Column>
+                        <Text text="CustomerID"/>
+                    </Column>
+                    <Column>
+                        <Text text="Order Date"/>
+                    </Column>
+                </columns>
+                
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <ObjectIdentifier title="{ordersTableModel>OrderID}"/>
+                            <Text text="{ordersTableModel>EmployeeID}"/>
+                            <Text text="{ordersTableModel>CustomerID}"/>
+                            <Text text="{path: 'ordersTableModel>OrderDate', formatter: '.formatter.formatDate'}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>
+
+
+
+
