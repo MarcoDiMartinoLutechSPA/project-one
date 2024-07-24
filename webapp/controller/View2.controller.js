@@ -3,8 +3,8 @@ sap.ui.define([
     "sap/ui/model/odata/v2/ODataModel",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
-    "sap/btp/esercizio4/controller/BaseController",
-    "../util/DateFormatter"
+    "sap/btp/projectone/controller/BaseController",
+    "../utils/DateFormatter"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller

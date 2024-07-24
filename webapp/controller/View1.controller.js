@@ -6,8 +6,8 @@ sap.ui.define([
     "sap/m/MessageBox",
     "sap/ui/export/Spreadsheet",
     "sap/ui/export/library",
-    "../util/DateFormatter",
-    "sap/btp/esercizio4/controller/BaseController"
+    "../utils/DateFormatter",
+    "sap/btp/projectone/controller/BaseController"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
